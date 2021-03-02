@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image ,StyleSheet} from 'react-native';
+import { View, Text, Button, Image ,StyleSheet, TextInput} from 'react-native';
 
 class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      nome: ''
+    };
+
+  this.pegaNome = this.pegaNome.bind(this);
 
 
+  }
+
+  pegaNome(texto){
+    if(texto.length >0 ){
+      this.setState
+    this.setState({ nome: 'Bem vindo: ' + texto})
+  }else{
+    this.setState({nome:''})
+  }
+}
 
   render(){
     return(
-      <View style={{  flex:1,
-                      flexDirection:'row',
-                      alignItems:'flex-start',
-                      justifyContent:'center'}}>
+      <View style={styles.container}>
 
-          <View style={ {height:50, width:50,  backgroundColor:'red'} } />
-          <View style={ {height:50, width:50, backgroundColor:'green'} } />
-          <View style={ {height:50, width:50, backgroundColor:'yellow'} } />
-          <View style={ {height:50, width:50, backgroundColor:'blue'} } />
-  
+        <TextInput 
+        style ={styles.input} 
+        placeholder="Digite seu nome?"
+        underlineColorAndroid="transparent"
+        onChangeText={this.pegaNome} />
+
+        <Text style={styles.texte}>{this.state.nome}</Text>
 
       </View>
     );
@@ -26,6 +42,25 @@ class App extends Component{
 
 
 export default App;
+
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+  },
+  input:{
+    height:45,
+    borderWidth:1,
+    borderColor:'#222',
+    margin:10,
+    fontSize:20,
+    padding:10,
+  },
+  texte:{
+    textAlign: 'center',
+    fontSize:25,
+  }
+})
 
 /**
  ***  justifyContent:
@@ -38,5 +73,6 @@ export default App;
  * - flex-start  
  * - center  
  * - flex-end
+ * - stretch : quando não tem nada dentro pega toda linha
  * 
  */
