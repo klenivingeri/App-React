@@ -7,11 +7,15 @@ class App extends Component{
 
   render(){
     return(
-      <View style={{flex:1,backgroundColor:'#222'}}>
+      <View style={{  flex:1,
+                      flexDirection:'row',
+                      alignItems:'flex-start',
+                      justifyContent:'center'}}>
 
-          <View style={ {height:65,  backgroundColor:'red'} } />
-          <View style={ {flex:1,  backgroundColor:'green'} } />
-          <View style={ {height:65,  backgroundColor:'yellow'} } />
+          <View style={ {height:50, width:50,  backgroundColor:'red'} } />
+          <View style={ {height:50, width:50, backgroundColor:'green'} } />
+          <View style={ {height:50, width:50, backgroundColor:'yellow'} } />
+          <View style={ {height:50, width:50, backgroundColor:'blue'} } />
   
 
       </View>
@@ -23,3 +27,16 @@ class App extends Component{
 
 export default App;
 
+/**
+ ***  justifyContent:
+ * - flex-start
+ * - center
+ * - flex-end
+ * - space-around
+ * 
+ *** alignItems:
+ * - flex-start  
+ * - center  
+ * - flex-end
+ * 
+ */
